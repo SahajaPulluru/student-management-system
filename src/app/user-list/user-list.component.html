@@ -1,0 +1,56 @@
+<br>
+<br><br><div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Students List</h1>
+    <a routerLink="/user-create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i>Create Student</a>
+</div>
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Students List</h6>
+            </div>
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>DOB</th>
+                                <th>Skills</th>
+                                <th>Phone</th>
+                                <th>Country</th>
+                                <th>Address</th>
+                                <th>State</th>
+                                <th>City</th>
+                                <th>Zipcode</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let user of userList">
+                                <td>{{user.id}}</td>
+                                <td>{{user.userName}}</td>
+                                <td>{{user.userEmail}}</td>
+                                <td>{{user.userDOB}}</td>
+                                <td>{{user.userSkills}}</td>
+                                <td>{{user.phoneNumber}}</td>
+                                <td>{{user.country}}</td>
+                                <td>{{user.userAddress}}</td>
+                                <td>{{user.userState}}</td>
+                                <td>{{user.userCity}}</td>
+                                <td>{{user.userZipcode}}</td>
+                                
+                                <td>
+                                    <button [routerLink]="['/user-edit',user.id]" class="btn btn-primary btn-sm mr-2">Edit</button>
+                                    <button class="btn btn-danger btn-sm" (click)="deleteData(user.id)">Delete</button>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                    </table>
+                    </div>
+        </div>
